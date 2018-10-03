@@ -1,7 +1,5 @@
 package codestore.binarysearchtree;
 
-import codestore.Node;
-
 public class LowestCommonAncestor_Optimized {
     public static void main(String[] args) {
         Node n1 = new Node(1);
@@ -28,10 +26,10 @@ public class LowestCommonAncestor_Optimized {
     }
 
     private static int lowestCommonAncestor(Node mRoot, Node mNodeOne, Node mNodeTwo) {
-        // The idea is to start traversing the tree starting from node
-        // - If both nodes are lesser than root, then LCA is present in left sub tree
-        // - If both nodes are greater than root, then LCA is present in right sub tree
-        // - If any node is equal to root node or if root node lies between both nodes, then current root node is the LCA
+        // The idea is to start traversing the tree starting from node :
+        // - If both nodes are lesser than root, then LCA is present in left sub tree.
+        // - If both nodes are greater than root, then LCA is present in right sub tree.
+        // - If any node is equal to root node or if root node lies between both nodes, then current root node is the LCA.
         if (mRoot == null) return -1;
         while (mRoot != null) {
             if (mRoot.data > mNodeOne.data && mRoot.data > mNodeTwo.data)
@@ -44,7 +42,7 @@ public class LowestCommonAncestor_Optimized {
     }
 }
 
-/*class Node {
+class Node {
     int data;
     Node left, right;
 
@@ -52,4 +50,4 @@ public class LowestCommonAncestor_Optimized {
         this.data = data;
         left = right = null;
     }
-}*/
+}
